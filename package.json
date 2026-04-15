@@ -1,0 +1,47 @@
+{
+  "name": "opencode-telegram-agent",
+  "version": "1.0.0",
+  "description": "MCP server that bridges Telegram messaging to OpenCode agents. Provides send_message and reply_to_message tools, plus an inbound listener that proxies Telegram DMs to your agent.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Dave Meade <dave@slackspace.net>",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "telegram",
+    "opencode",
+    "bot",
+    "messaging",
+    "agent"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "index.js",
+  "bin": {
+    "opencode-telegram-agent": "./install.js"
+  },
+  "files": [
+    "install.js",
+    "mcp.js",
+    "index.js",
+    "cli.js",
+    "postinstall.js",
+    "README.md"
+  ],
+  "scripts": {
+    "postinstall": "node postinstall.js",
+    "start": "node index.js > opencode-telegram-agent.log 2>&1 & echo $!",
+    "debug": "node index.js",
+    "mcp": "node mcp.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@opencode-ai/sdk": "^1.4.3",
+    "telegraf": "^4.16.3",
+    "zod": "^3.25.76"
+  },
+  "optionalDependencies": {
+    "dotenv": "^16.6.1"
+  }
+}
