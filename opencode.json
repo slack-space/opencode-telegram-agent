@@ -1,0 +1,11 @@
+{
+  "mcp": {
+    "opencode-telegram-agent": {
+      "type": "local",
+      "command": [
+        "node",
+        "mcp.js"
+      ]
+    }
+  }
+}
